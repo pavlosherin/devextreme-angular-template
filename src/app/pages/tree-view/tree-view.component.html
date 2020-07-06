@@ -1,0 +1,34 @@
+<h2 class="content-block">Tree View</h2>
+
+<div class="content-block dx-card responsive-paddings">
+  <p>I'm trying to use dx-tree-view with 'dettached' search, using dx-text-box. Problem appears when I need to highlight searched text. When I click on highlighted text it doesn't emit onItemClick event but simple text and rest of field does.<br />
+  See <a href="https://supportcenter.devexpress.com/ticket/details/t903698/treeview-highlight-search-items">Ticket T903698</a>.</p>
+</div>
+
+<div class="content-block dx-card responsive-paddings">
+  <dx-text-box
+    [(value)]="searchValue"
+    [showClearButton]="true"
+    placeholder="Search in tree view"
+  ></dx-text-box>
+</div>
+
+<div class="content-block dx-card responsive-paddings">
+  <dx-tree-view
+    [dataSource]="dataSource"
+    displayExpr="text"
+    itemTemplate="menuItem"
+    itemsExpr="items"
+    noDataText="Menu is not available"
+    selectedExpr="selected"
+    [selectByClick]="true"
+    [searchValue]="searchValue"
+    selectionMode="single"
+    (onItemClick)="onItemClicked($event)"
+  >
+    <div *dxTemplate="let itemData of 'menuItem'">
+      <span [innerHTML]="highlight(itemData.text, searchValue) | safeHtml"></span>
+    </div>
+  </dx-tree-view>
+
+</div>

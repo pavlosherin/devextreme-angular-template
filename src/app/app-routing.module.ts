@@ -6,6 +6,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { DisplayDataComponent } from './pages/display-data/display-data.component';
 import { DxDataGridModule, DxFormModule } from 'devextreme-angular';
+import {TreeViewComponent} from './pages/tree-view/tree-view.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,11 @@ const routes: Routes = [
   {
     path: 'profile',
     component: ProfileComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'tree-view',
+    component: TreeViewComponent,
     canActivate: [ AuthGuardService ]
   },
   {

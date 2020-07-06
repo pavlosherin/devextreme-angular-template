@@ -6,10 +6,15 @@ import { SideNavOuterToolbarModule, SideNavInnerToolbarModule, SingleCardModule 
 import { FooterModule, LoginFormModule } from './shared/components';
 import { AuthService, ScreenService, AppInfoService } from './shared/services';
 import { AppRoutingModule } from './app-routing.module';
+import { TreeViewComponent } from './pages/tree-view/tree-view.component';
+import {DxTextBoxModule, DxTreeViewModule} from 'devextreme-angular';
+import {SafeHtmlPipe} from './pages/tree-view/safe-html.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent
+    SafeHtmlPipe,
+    AppComponent,
+    TreeViewComponent
   ],
   imports: [
     BrowserModule,
@@ -18,7 +23,9 @@ import { AppRoutingModule } from './app-routing.module';
     SingleCardModule,
     FooterModule,
     LoginFormModule,
-    AppRoutingModule
+    AppRoutingModule,
+    DxTreeViewModule,
+    DxTextBoxModule
   ],
   providers: [AuthService, ScreenService, AppInfoService],
   bootstrap: [AppComponent]
