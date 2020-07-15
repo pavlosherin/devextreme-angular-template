@@ -19,6 +19,10 @@ export const navigation = [
       {
         text: 'Tree View',
         path: '/tree-view'
+      },
+      {
+        text: 'DataGrid (cell edit)',
+        path: '/data-grid-cell-edit'
       }
     ]
   }

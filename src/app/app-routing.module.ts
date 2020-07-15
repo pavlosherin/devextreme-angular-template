@@ -7,6 +7,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { DisplayDataComponent } from './pages/display-data/display-data.component';
 import { DxDataGridModule, DxFormModule } from 'devextreme-angular';
 import {TreeViewComponent} from './pages/tree-view/tree-view.component';
+import {DataGridCellEditComponent} from './pages/data-grid-cell-edit/data-grid-cell-edit.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,11 @@ const routes: Routes = [
   {
     path: 'tree-view',
     component: TreeViewComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'data-grid-cell-edit',
+    component: DataGridCellEditComponent,
     canActivate: [ AuthGuardService ]
   },
   {

@@ -1,0 +1,26 @@
+<h2 class="content-block">DataGrid cell edit</h2>
+
+<div class="content-block dx-card responsive-paddings">
+  <p>In my case some of columns are not allowed to edit, for example <i>e-mail</i> and <i>date registered</i> but when I create new row I want to enable edit value of <i>e-mail</i> but <i>date registered</i> still disable.<br />
+    Expected behavior is that I <strong>can</strong> edit <i>e-mail</i> and <strong>can't</strong> edit <i>date registered</i> in new row. And still <strong>can't</strong> edit <i>e-mail</i> and <i>date registered</i> in saved rows. - How to achieve this behavior?<br />
+    See <a href="https://supportcenter.devexpress.com/ticket/details/t914550/datagrid-editor-allow-edit-cell-in-new-row-disable-in-saved-values">Ticket T914550</a>.</p>
+</div>
+
+<div class="content-block dx-card responsive-paddings">
+  <dx-data-grid
+    [keyExpr]="'email'"
+    [columns]="columns"
+    [columnAutoWidth]="true"
+    [dataSource]="dataSource"
+    [editing]="{
+      allowUpdating: true,
+      allowAdding: true,
+      allowDeleting: true,
+      useIcons: true,
+      mode: 'batch'
+    }"
+    [rowAlternationEnabled]="true"
+    [showBorders]="true"
+    [showRowLines]="true"
+  ></dx-data-grid>
+</div>

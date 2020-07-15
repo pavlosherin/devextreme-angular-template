@@ -7,26 +7,29 @@ import { FooterModule, LoginFormModule } from './shared/components';
 import { AuthService, ScreenService, AppInfoService } from './shared/services';
 import { AppRoutingModule } from './app-routing.module';
 import { TreeViewComponent } from './pages/tree-view/tree-view.component';
-import {DxTextBoxModule, DxTreeViewModule} from 'devextreme-angular';
+import {DxDataGridModule, DxTextBoxModule, DxTreeViewModule} from 'devextreme-angular';
 import {SafeHtmlPipe} from './pages/tree-view/safe-html.pipe';
+import { DataGridCellEditComponent } from './pages/data-grid-cell-edit/data-grid-cell-edit.component';
 
 @NgModule({
   declarations: [
     SafeHtmlPipe,
     AppComponent,
-    TreeViewComponent
+    TreeViewComponent,
+    DataGridCellEditComponent
   ],
-  imports: [
-    BrowserModule,
-    SideNavOuterToolbarModule,
-    SideNavInnerToolbarModule,
-    SingleCardModule,
-    FooterModule,
-    LoginFormModule,
-    AppRoutingModule,
-    DxTreeViewModule,
-    DxTextBoxModule
-  ],
+    imports: [
+        BrowserModule,
+        SideNavOuterToolbarModule,
+        SideNavInnerToolbarModule,
+        SingleCardModule,
+        FooterModule,
+        LoginFormModule,
+        AppRoutingModule,
+        DxTreeViewModule,
+        DxTextBoxModule,
+        DxDataGridModule
+    ],
   providers: [AuthService, ScreenService, AppInfoService],
   bootstrap: [AppComponent]
 })
