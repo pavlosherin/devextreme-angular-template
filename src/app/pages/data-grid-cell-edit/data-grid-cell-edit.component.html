@@ -9,7 +9,6 @@
 <div class="content-block dx-card responsive-paddings">
   <dx-data-grid
     [keyExpr]="'email'"
-    [columns]="columns"
     [columnAutoWidth]="true"
     [dataSource]="dataSource"
     [editing]="{
@@ -22,5 +21,16 @@
     [rowAlternationEnabled]="true"
     [showBorders]="true"
     [showRowLines]="true"
-  ></dx-data-grid>
+
+    (onEditorPreparing)="onEditorPreparing($event)"
+  >
+    <dxi-column
+      *ngFor="let column of columns"
+      [allowEditing]="column.dataField === 'registrationDate' ? false : column.allowEditing"
+      [caption]="column.caption"
+      [cssClass]="column.cssClass"
+      [dataField]="column.dataField"
+      [dataType]="column.dataType"
+    ></dxi-column>
+  </dx-data-grid>
 </div>

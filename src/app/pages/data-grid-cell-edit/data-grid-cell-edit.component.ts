@@ -56,4 +56,16 @@ export class DataGridCellEditComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  onEditorPreparing(e): void {
+    // target data Cells and the dataField
+    if (e.parentType === 'dataRow' && e.dataField === 'email') {
+      if ( e.row.isNewRow) {
+        e.editorOptions.disabled = false;
+      } // enabled only when new record
+      else {
+        e.editorOptions.disabled = true;
+      } // disabled when existing
+    }
+  }
 }
