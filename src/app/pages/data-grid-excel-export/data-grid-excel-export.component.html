@@ -1,0 +1,19 @@
+<h2 class="content-block">DataGrid excel export</h2>
+
+<div class="content-block dx-card responsive-paddings">
+  <p></p>
+</div>
+
+<div class="content-block dx-card responsive-paddings">
+  <dx-data-grid
+    [keyExpr]="'email'"
+    [columnAutoWidth]="true"
+    [dataSource]="dataSource"
+    [columns]="columns"
+    [rowAlternationEnabled]="true"
+    [showBorders]="true"
+    [showRowLines]="true"
+    [export]="{enabled: true}"
+    (onExporting)="onExporting($event)"
+  >  </dx-data-grid>
+</div>

@@ -10,13 +10,15 @@ import { TreeViewComponent } from './pages/tree-view/tree-view.component';
 import {DxDataGridModule, DxTextBoxModule, DxTreeViewModule} from 'devextreme-angular';
 import {SafeHtmlPipe} from './pages/tree-view/safe-html.pipe';
 import { DataGridCellEditComponent } from './pages/data-grid-cell-edit/data-grid-cell-edit.component';
+import { DataGridExcelExportComponent } from './pages/data-grid-excel-export/data-grid-excel-export.component';
 
 @NgModule({
   declarations: [
     SafeHtmlPipe,
     AppComponent,
     TreeViewComponent,
-    DataGridCellEditComponent
+    DataGridCellEditComponent,
+    DataGridExcelExportComponent
   ],
     imports: [
         BrowserModule,

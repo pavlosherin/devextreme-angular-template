@@ -8,6 +8,7 @@ import { DisplayDataComponent } from './pages/display-data/display-data.componen
 import { DxDataGridModule, DxFormModule } from 'devextreme-angular';
 import {TreeViewComponent} from './pages/tree-view/tree-view.component';
 import {DataGridCellEditComponent} from './pages/data-grid-cell-edit/data-grid-cell-edit.component';
+import {DataGridExcelExportComponent} from './pages/data-grid-excel-export/data-grid-excel-export.component';
 
 const routes: Routes = [
   {
@@ -28,6 +29,11 @@ const routes: Routes = [
   {
     path: 'data-grid-cell-edit',
     component: DataGridCellEditComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'data-grid-excel-export',
+    component: DataGridExcelExportComponent,
     canActivate: [ AuthGuardService ]
   },
   {

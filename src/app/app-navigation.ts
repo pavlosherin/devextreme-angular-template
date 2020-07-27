@@ -23,6 +23,10 @@ export const navigation = [
       {
         text: 'DataGrid (cell edit)',
         path: '/data-grid-cell-edit'
+      },
+      {
+        text: 'DataGrid (excel export)',
+        path: '/data-grid-excel-export'
       }
     ]
   }
