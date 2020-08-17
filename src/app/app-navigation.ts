@@ -25,8 +25,8 @@ export const navigation = [
         path: '/data-grid-cell-edit'
       },
       {
-        text: 'DataGrid (excel export)',
-        path: '/data-grid-excel-export'
+        text: 'DataGrid (filter row)',
+        path: '/data-grid-filter-row'
       }
     ]
   }

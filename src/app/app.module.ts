@@ -7,10 +7,11 @@ import { FooterModule, LoginFormModule } from './shared/components';
 import { AuthService, ScreenService, AppInfoService } from './shared/services';
 import { AppRoutingModule } from './app-routing.module';
 import { TreeViewComponent } from './pages/tree-view/tree-view.component';
-import {DxDataGridModule, DxTextBoxModule, DxTreeViewModule} from 'devextreme-angular';
+import {DxButtonModule, DxDataGridModule, DxTextBoxModule, DxTreeViewModule} from 'devextreme-angular';
 import {SafeHtmlPipe} from './pages/tree-view/safe-html.pipe';
 import { DataGridCellEditComponent } from './pages/data-grid-cell-edit/data-grid-cell-edit.component';
-import { DataGridExcelExportComponent } from './pages/data-grid-excel-export/data-grid-excel-export.component';
+import { DataGridFilterRowComponent } from './pages/data-grid-filter-row/data-grid-filter-row.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,20 +19,22 @@ import { DataGridExcelExportComponent } from './pages/data-grid-excel-export/dat
     AppComponent,
     TreeViewComponent,
     DataGridCellEditComponent,
-    DataGridExcelExportComponent
+    DataGridFilterRowComponent
   ],
-    imports: [
-        BrowserModule,
-        SideNavOuterToolbarModule,
-        SideNavInnerToolbarModule,
-        SingleCardModule,
-        FooterModule,
-        LoginFormModule,
-        AppRoutingModule,
-        DxTreeViewModule,
-        DxTextBoxModule,
-        DxDataGridModule
-    ],
+  imports: [
+    BrowserModule,
+    SideNavOuterToolbarModule,
+    SideNavInnerToolbarModule,
+    SingleCardModule,
+    FooterModule,
+    LoginFormModule,
+    AppRoutingModule,
+    DxTreeViewModule,
+    DxTextBoxModule,
+    DxDataGridModule,
+    DxButtonModule,
+    FormsModule
+  ],
   providers: [AuthService, ScreenService, AppInfoService],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,14 @@
+:host {
+  .row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .filter-input {
+    margin-right: 10px;
+  }
+  .w-rest {
+    flex: 1;
+  }
+}

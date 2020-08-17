@@ -1,0 +1,51 @@
+<h2 class="content-block">DataGrid filter row</h2>
+
+<div class="content-block dx-card responsive-paddings">
+  <b>Expected:</b> Changing filter row <u>without filtering current data</u>, propagate filter rows values into filter query into input and from input submit filter query to the back-end.<br/>
+  <b>Current:</b> Changing filter row immediately filters current data, propagates filter rows values into filter query due to <code>[filterSyncEnabled]="true"</code> dataGrid attribute,  from input submit filter query to the back-end.<br/>
+  <b>How to</b> use filter row without filtering current data, just update filter query?
+</div>
+
+<div class="content-block dx-card responsive-paddings">
+  <div class="row">
+    <dx-text-box
+      class="w-rest filter-input"
+      placeholder="Filter input"
+      [ngModel]="filterQuery$ | async"
+      (ngModelChange)="filterQueryChange($event)"
+    ></dx-text-box>
+    <dx-button
+      icon="filter"
+      text="Submit filter query"
+      (click)="doFilter()"
+    ></dx-button>
+  </div>
+</div>
+
+<div class="content-block dx-card responsive-paddings">
+  <dx-data-grid
+    #dataGrid
+    [keyExpr]="'email'"
+    [columnAutoWidth]="true"
+    [dataSource]="dataSource"
+    [filterRow]="{
+      visible: true,
+      applyFilter: 'auto'
+    }"
+    [filterSyncEnabled]="true"
+    [filterValue]="filterValue$ | async"
+    (filterValueChange)="filterValueChange($event)"
+    [rowAlternationEnabled]="true"
+    [showBorders]="true"
+    [showRowLines]="true"
+  >
+    <dxi-column
+      *ngFor="let column of columns"
+      [allowEditing]="column.dataField === 'registrationDate' ? false : column.allowEditing"
+      [caption]="column.caption"
+      [cssClass]="column.cssClass"
+      [dataField]="column.dataField"
+      [dataType]="column.dataType"
+    ></dxi-column>
+  </dx-data-grid>
+</div>

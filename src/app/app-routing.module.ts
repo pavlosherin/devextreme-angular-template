@@ -8,7 +8,7 @@ import { DisplayDataComponent } from './pages/display-data/display-data.componen
 import { DxDataGridModule, DxFormModule } from 'devextreme-angular';
 import {TreeViewComponent} from './pages/tree-view/tree-view.component';
 import {DataGridCellEditComponent} from './pages/data-grid-cell-edit/data-grid-cell-edit.component';
-import {DataGridExcelExportComponent} from './pages/data-grid-excel-export/data-grid-excel-export.component';
+import {DataGridFilterRowComponent} from './pages/data-grid-filter-row/data-grid-filter-row.component';
 
 const routes: Routes = [
   {
@@ -32,8 +32,8 @@ const routes: Routes = [
     canActivate: [ AuthGuardService ]
   },
   {
-    path: 'data-grid-excel-export',
-    component: DataGridExcelExportComponent,
+    path: 'data-grid-filter-row',
+    component: DataGridFilterRowComponent,
     canActivate: [ AuthGuardService ]
   },
   {
